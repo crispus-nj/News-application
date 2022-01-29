@@ -1,8 +1,9 @@
 from app import app
 import requests
 from .config import Config
+import os
 
-Api_key = app.config['API_KEY']
+Api_key = os.getenv('API_KEY')
 tech_base_url = app.config['TECH_CRUNCH_BASE_URL']
 business_base_url=app.config['BUSINESS_BASE_URL']
 
