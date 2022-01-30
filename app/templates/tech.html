@@ -1,11 +1,12 @@
 {% extends 'base.html'%} 
 {% block content %}
-<div class="container">
+<div class="container-fluid">
     <h3 class="text-success" style="text-align: center; margin-top: 5rem; margin-bottom: 1rem">***Tech Crunch Headlines***</h3>
     <div class="row">
+        <div class="col-lg-3">
         {% for tech_data in tech_link %}
-        <div class="col-md-3">
-            <div class="card shadow">
+<h1>Hellow</h1>
+            <div class="card shadow mb-3">
                 <img src="{{tech_data.poster}}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{tech_data.title}}</h5>
@@ -20,8 +21,9 @@
                   </div>
                 </div>
               </div>
-        </div>
         {% endfor %}
+
+        </div>
     </div>
 </div>
 

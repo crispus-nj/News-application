@@ -10,6 +10,7 @@ Api_key = os.getenv('API_KEY')
 tech_base_url = app.config['TECH_CRUNCH_BASE_URL']
 business_base_url=app.config['BUSINESS_BASE_URL']
 all_article_base_url= app.config['ALL_ARTICLES_BASE_URL']
+
 def tech_news():
     base_url = tech_base_url.format(Api_key)
     tech_data = requests.get(base_url).json()
@@ -51,4 +52,25 @@ def all_articles_news():
     # print(all_articles)
 
     return all_articles
+
+def business_news():
+    '''
+    business_news function for getting data about us business operations
+    '''
+    base_url = business_base_url.format(Api_key)
+    bussiness_articles = requests.get(base_url).json()
+    business_data = []
+    for business in bussiness_articles ['articles']:
+        id = business['source']
+        title = business['title']
+        poster = business['urlToImage']
+        url_link = business['url']
+        description = business['description']
+        published_date = business['publishedAt']
+        content = business['content']
+        
+        articles_object = News_article(id, title, poster, url_link, description, published_date, content)
+        business_data .append(articles_object)
+
+    return business_data
 
