@@ -10,6 +10,7 @@ Api_key = os.getenv('API_KEY')
 tech_base_url = app.config['TECH_CRUNCH_BASE_URL']
 business_base_url=app.config['BUSINESS_BASE_URL']
 all_article_base_url= app.config['ALL_ARTICLES_BASE_URL']
+apple_base_url = app.config['APPLE_BASE_URL']
 
 def tech_news():
     base_url = tech_base_url.format(Api_key)
@@ -36,8 +37,6 @@ def all_articles_news():
     base_url = all_article_base_url.format(Api_key)
     all_article_data = requests.get(base_url).json()
     all_articles = []
-    # print(all_article_data['articles'])
-# id, poster, url_link, description, published_date, content
     for articles in all_article_data['articles']:
         id = articles['source']
         title = articles['title']
@@ -49,7 +48,6 @@ def all_articles_news():
         
         articles_object = News_article(id, title, poster, url_link, description, published_date, content)
         all_articles.append(articles_object)
-    # print(all_articles)
 
     return all_articles
 
@@ -73,4 +71,26 @@ def business_news():
         business_data .append(articles_object)
 
     return business_data
+
+def apple_news():
+    '''
+    apple_news function will handle getting of data from the api, data about apple news
+    '''
+    base_url = apple_base_url.format(Api_key)
+    apple_articles = requests.get(base_url).json()
+    apple_data = []
+    for apple in apple_articles['articles']:
+        id = apple['source']
+        title = apple['title']
+        poster = apple['urlToImage']
+        url_link = apple['url']
+        description = apple['description']
+        published_date = apple['publishedAt']
+        content = apple['content']
+        
+        articles_object = News_article(id, title, poster, url_link, description, published_date, content)
+        apple_data .append(articles_object)
+
+    return apple_data
+
 
