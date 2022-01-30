@@ -11,6 +11,7 @@ tech_base_url = app.config['TECH_CRUNCH_BASE_URL']
 business_base_url=app.config['BUSINESS_BASE_URL']
 all_article_base_url= app.config['ALL_ARTICLES_BASE_URL']
 apple_base_url = app.config['APPLE_BASE_URL']
+tesla_base_url= app.config['TESLA_BASE_URL']
 
 def tech_news():
     base_url = tech_base_url.format(Api_key)
@@ -92,5 +93,23 @@ def apple_news():
         apple_data .append(articles_object)
 
     return apple_data
+
+def tesla_news():
+    base_url = tesla_base_url.format(Api_key)
+    tesla_articles = requests.get(base_url).json()
+    tesla_data = []
+    for tesla in tesla_articles ['articles']:
+        id = tesla['source']
+        title = tesla['title']
+        poster = tesla['urlToImage']
+        url_link = tesla['url']
+        description = tesla['description']
+        published_date = tesla['publishedAt']
+        content = tesla['content']
+        
+        articles_object = News_article(id, title, poster, url_link, description, published_date, content)
+        tesla_data.append(articles_object)
+    return tesla_data
+
 
 
