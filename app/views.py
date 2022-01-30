@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template
-from .requests import tech_news, all_articles_news, business_news, apple_news, tesla_news
+from .requests import tech_news, all_articles_news, business_news, apple_news
 
 @app.route('/')
 def homepage():
@@ -15,13 +15,5 @@ def tech_crunch():
     homepage function runs everytime the application is runned without any routes attached
     '''
     tech_link = tech_news()
-
     return render_template('tech.html', tech_link=tech_link)
 
-@app.route('/tesla')
-def tesla_news():
-    '''
-    apple_news function for displaying tesla data to the screen
-    '''
-    tesla = tesla_news()
-    return render_template('tesla.html', tesla=tesla)

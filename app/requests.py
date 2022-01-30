@@ -94,22 +94,22 @@ def apple_news():
 
     return apple_data
 
-def tesla_news():
-    base_url = tesla_base_url.format(Api_key)
-    tesla_articles = requests.get(base_url).json()
-    tesla_data = []
-    for tesla in tesla_articles ['articles']:
-        id = tesla['source']
-        title = tesla['title']
-        poster = tesla['urlToImage']
-        url_link = tesla['url']
-        description = tesla['description']
-        published_date = tesla['publishedAt']
-        content = tesla['content']
+# def tesla_news():
+#     base_url = tesla_base_url.format(Api_key)
+#     # tesla_articles = requests.get(base_url).json()
+#     # tesla_data = []
+#     # for tesla in tesla_articles['articles']:
+#     #     id = tesla['source']
+#     #     title = tesla['title']
+#     #     poster = tesla['urlToImage']
+#     #     url_link = tesla['url']
+#     #     description = tesla['description']
+#     #     published_date = tesla['publishedAt']
+#     #     content = tesla['content']
         
-        articles_object = News_article(id, title, poster, url_link, description, published_date, content)
-        tesla_data.append(articles_object)
-    return tesla_data
+#     #     articles_object = News_article(id, title, poster, url_link, description, published_date, content)
+#     #     tesla_data.append(articles_object)
+#     return base_url
 
 
 

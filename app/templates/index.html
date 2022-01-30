@@ -5,13 +5,14 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-3">
+      <h3 style="text-align: center;">USA Business</h3>
       {% for business in business_data %}
       <div class="card mb-3">
         <img src="{{business.poster}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{business.title}}</h5>
           <p class="card-text">{{business.content}}</p>
-          <a href="{{business.url_link}}" class="btn btn-outline-info">Read More</a>
+          <a href="{{business.url_link}}" class="btn btn-outline-info">Read More...</a>
         </div>
       </div>
       {% endfor %}
@@ -23,12 +24,13 @@
         <div class="card-body card-info">
           <h5 class="card-title">{{article_data.title}}</h5>
           <p class="card-text">{{article_data.content}}</p>
-          <a href="{{article_data.url_link}}" class="btn btn-outline-primary">Go somewhere</a>
+          <a href="{{article_data.url_link}}" class="btn btn-outline-primary">Read More...</a>
         </div>
       </div>
     {% endfor %}
     </div>
     <div class="col-lg-3">
+      <h3 style="text-align: center;">Apple News</h3>
       {% for apple in apple_data %}
       <div class="card mb-3">
         <img src="{{apple.poster}}" class="card-img-top" alt="...">
