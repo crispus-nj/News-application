@@ -1,0 +1,29 @@
+{% extends 'base.html'%} 
+{% block content %}
+<div class="container">
+    <h3 class="text-success" style="text-align: center; margin-top: 5rem; margin-bottom: 1rem">***Tech Crunch Headlines***</h3>
+    <div class="row">
+        {% for tech_data in tech_link %}
+        <div class="col-md-3">
+            <div class="card shadow">
+                <img src="{{tech_data.poster}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{tech_data.title}}</h5>
+                  <p class="card-text">{{tech_data.description}}</p>
+                  <div class="published">
+                    <div class="published-1">
+                        <p class="card-text">Published Date: <strong>{{tech_data.published_date}}</strong></p>
+                    </div>
+                    <div class="published-2">
+                        <a href="{{tech_data.url_link}}" class="btn btn-outline-primary">Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
