@@ -2,7 +2,7 @@ class Config:
     '''
     parent class of all other config sub class
     '''
-    ALL_ARTICLES_BASE_URL="https://newsapi.org/v2/everything?domains=wsj.com&apiKey={}"
+    ALL_ARTICLES_BASE_URL="https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey={}"
     TECH_CRUNCH_BASE_URL = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey={}"
     BUSINESS_BASE_URL = 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey={}'
     TESLA_BASE_URL = "https://newsapi.org/v2/everything?q=tesla&from=2021-12-29&sortBy=publishedAt&apiKey={}"

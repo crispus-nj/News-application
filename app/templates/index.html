@@ -12,7 +12,14 @@
         <div class="card-body">
           <h5 class="card-title">{{business.title}}</h5>
           <p class="card-text">{{business.content}}</p>
-          <a href="{{business.url_link}}" class="btn btn-outline-info">Read More...</a>
+          <div class="published">
+            <div class="published-1">
+              <a href="{{business.url_link}}" class="btn btn-outline-info">Read More...</a>
+            </div>
+            <div class="published-1">
+              <p><small><i><strong>Date:</strong></i> {{business.published_date}}</small></p>
+            </div>
+            </div>
         </div>
       </div>
       {% endfor %}
@@ -24,7 +31,14 @@
         <div class="card-body card-info">
           <h5 class="card-title">{{article_data.title}}</h5>
           <p class="card-text">{{article_data.content}}</p>
+          <div class="published">
+            <div class="published-1">
+              <p><small><i><strong>Date:</strong></i> {{article_data.published_date}}</small></p>
+            </div>
+            <div class="published-1">
           <a href="{{article_data.url_link}}" class="btn btn-outline-primary">Read More...</a>
+            </div>
+            </div>
         </div>
       </div>
     {% endfor %}
@@ -37,7 +51,14 @@
         <div class="card-body">
           <h5 class="card-title">{{apple.title}}</h5>
           <p class="card-text">{{apple.content}}</p>
-          <a href="{{apple.url_link}}" class="btn btn-outline-primary">Read More...</a>
+          <div class="published">
+            <div class="published-1">
+              <a href="{{apple.url_link}}" class="btn btn-outline-primary">Read More...</a>
+            </div>
+            <div class="published-1">
+              <p><small><i><strong>Date:</strong></i> {{apple.published_date}}</small></p>
+            </div>
+          </div>
         </div>
       </div>
       {% endfor%}
