@@ -39,7 +39,7 @@ def all_articles_news():
     all_article_data = requests.get(base_url).json()
     all_articles = []
     data_articls = all_article_data.get('articles')
-    print(type(data_articls))
+    print(type(data_articls),all_article_data)
     for articles_data in all_article_data['articles'] :
         id = articles_data.get('source')
         title = articles_data.get('title')
