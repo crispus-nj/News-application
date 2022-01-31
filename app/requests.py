@@ -40,7 +40,7 @@ def all_articles_news():
     all_articles = []
     data_articls = all_article_data.get('articles')
     print(type(data_articls))
-    for articles_data in data_articls:
+    for articles_data in all_article_data['articles'] :
         id = articles_data.get('source')
         title = articles_data.get('title')
         poster = articles_data.get('urlToImage')
