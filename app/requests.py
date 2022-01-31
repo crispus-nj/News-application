@@ -38,7 +38,9 @@ def all_articles_news():
     base_url = all_article_base_url.format(Api_key)
     all_article_data = requests.get(base_url).json()
     all_articles = []
-    for articles_data in all_article_data['articles']:
+    data_articls = all_article_data.get('articles')
+    print(data_articls)
+    for articles_data in all_article_data.get('articles'):
         id = articles_data['source']
         title = articles_data['title']
         poster = articles_data['urlToImage']
