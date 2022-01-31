@@ -38,14 +38,14 @@ def all_articles_news():
     base_url = all_article_base_url.format(Api_key)
     all_article_data = requests.get(base_url).json()
     all_articles = []
-    for articles in all_article_data['articles']:
-        id = articles['source']
-        title = articles['title']
-        poster = articles['urlToImage']
-        url_link = articles['url']
-        description = articles['description']
-        published_date = articles['publishedAt']
-        content = articles['content']
+    for articles_data in all_article_data['articles']:
+        id = articles_data['source']
+        title = articles_data['title']
+        poster = articles_data['urlToImage']
+        url_link = articles_data['url']
+        description = articles_data['description']
+        published_date = articles_data['publishedAt']
+        content = articles_data['content']
         
         articles_object = News_article(id, title, poster, url_link, description, published_date, content)
         all_articles.append(articles_object)
